@@ -7,7 +7,7 @@ Forth words for 4bit parallel connection to a LCD1602.
 <pre>
     : demo
         1 LCD_init drop \ to get rid of start msg
-        LCD_on \ switch on backlight if there
+        LCD_on \ switch backlight on
         s" Hello world!" LCD_write
         0 1 LCD_pos \ second line
         s" ============" LCD_write
