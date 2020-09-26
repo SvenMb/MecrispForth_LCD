@@ -4,6 +4,7 @@
 Forth words for 4bit parallel connection to a LCD1602.
 
 * Example
+<pre>
     : demo
         1 LCD_init drop \ to get rid of start msg
         LCD_on \ switch on backlight if there
@@ -11,6 +12,7 @@ Forth words for 4bit parallel connection to a LCD1602.
         0 1 LCD_pos \ second line
         s" ============" LCD_write
     ;
+</pre>
 
 This was written on an STM32f103, but should run at least on any STM32 microcontroller.
 
