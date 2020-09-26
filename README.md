@@ -3,7 +3,7 @@
 # LCD1602_direct.fs
 Forth words for 4bit parallel connection to a LCD1602.
 
-* Example
+* simple Example
 <pre>
     : demo
         1 LCD_init drop \ to get rid of start msg
@@ -13,6 +13,9 @@ Forth words for 4bit parallel connection to a LCD1602.
         s" ============" LCD_write
     ;
 </pre>
+
+# monster.fs
+demo with pixelwise moving a "10x8 sprite" over the screen (symetrie complication is just there for fun)
 
 This was written on an STM32f103, but should run at least on any STM32 microcontroller.
 
