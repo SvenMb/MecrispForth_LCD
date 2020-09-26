@@ -3,7 +3,9 @@
 \ don't forget to start the systicks-hz, else it will hang 
 
 \ define Ports
-PA0 constant LCD_BL \ Backlight 0 active, connected to K on LCD
+
+\ Backlight 0 active, connected to K on LCD, but it is optionaly
+PA0 constant LCD_BL
 \ PA1 constant LCD_RW \ not used
 PA2 constant LCD_RS \ 1 data 0 cmd
 PA3 constant LCD_EN \ 1 active
@@ -151,15 +153,21 @@ decimal
 
 
 \ initialize the LCD
+\ writes msg in LCD and switches backlight on if nothing is on stack(!)
+\ 
 : LCD_init ( - - )
 
     \ initialize Ports
-    OMODE-OD LCD_BL io-mode!
-    LCD_BL ios! \ BL off
+    [ifdef] LCD_BL
+	OMODE-OD LCD_BL io-mode!
+	LCD_BL ios! \ BL off
+    [then]
     OMODE-OD LCD_RS io-mode!
     LCD_RS ios! \ data mode
-    \ OMODE-PP LCD_RW \ read or write, not used/always low
-    \ LCD_RW ioc!
+    [ifdef] LCD_RW
+	OMODE-PP LCD_RW \ read or write, not used/always low
+	LCD_RW ioc!
+    [then]
     OMODE-PP LCD_EN io-mode!
     LCD_EN ioc! \ nothing
     
@@ -192,6 +200,7 @@ decimal
     
     \ you don't have to show this notice
     \ comment out if you like, it is just here as demo
+    \ if something is on stack don't do that and don't switch Backlight on!
     depth 0= if 
 	s" LCD1602 via HD44780 on 4bit interface" LCD_write
 	0 1 LCD_pos

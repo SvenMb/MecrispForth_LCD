@@ -145,7 +145,7 @@ decimal
 \ just start after LCD_init
 : monster_demo
     LCD_init
-    LCD_on \ just in case we have something on stack
+    LCD_on \ just in case we have something on stack and BL is off therefore
     $0C LCD_cmd \ disp on + cursor off
     17 0 do
 	monster 0 $40 LCD_monster
