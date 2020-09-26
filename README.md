@@ -17,6 +17,8 @@ Forth words for 4bit parallel connection to a LCD1602.
 # monster.fs
 demo with pixelwise moving a "10x8 sprite" over the screen (symetrie complication is just there for fun)
 
+****
+
 This was written on an STM32f103, but should run at least on any STM32 microcontroller.
 
 This is written and tested for Mecrips-Stellaris Forth: http://mecrisp.sourceforge.net/
