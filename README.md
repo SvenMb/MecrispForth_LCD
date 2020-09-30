@@ -14,8 +14,16 @@ Forth words for 4bit parallel connection to a LCD1602.
     ;
 </pre>
 
+# LCD1602_i2c.fs
+forth words for i2c connected LCD1602 (via PCF8574)
+
+* usage is same as above
+* uses i2c driver from JCW (link see below)
+
 # monster.fs
 demo with pixelwise moving a "10x8 sprite" over the screen (symetrie complication is just there for fun)
+
+* works with direct and i2c connection
 
 ****
 
