@@ -19,7 +19,7 @@ forth words for i2c connected LCD1602 (via PCF8574)
 
 * usage is same as above
 * uses i2c driver from JCW (link see below)
-* start I2C with ***i2c-init*** before using this library
+* start i2c with ***i2c-init*** before using this library
 
 # monster.fs
 demo with pixelwise moving a "10x8 sprite" over the screen (symetrie complication is just there for fun)
