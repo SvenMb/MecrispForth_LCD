@@ -14,7 +14,7 @@ Forth words for 4bit parallel connection to a LCD1602.
     ;
 </pre>
 
-![breadboard](LCD1601_direct_MB103.png)
+![schematics](LCD1602_direct.png)
 (sorry no time for real schematic)
 
 # LCD1602_i2c.fs
@@ -23,6 +23,9 @@ forth words for i2c connected LCD1602 (via PCF8574)
 * usage is same as above
 * uses i2c driver from JCW (link see below)
 * start i2c with ***i2c-init*** before using this library
+
+![schematics](LCD1602_i2c.png)
+(sorry no time for real schematic)
 
 # monster.fs
 demo with pixelwise moving a "10x8 sprite" over the screen (symetrie complication is just there for fun)
