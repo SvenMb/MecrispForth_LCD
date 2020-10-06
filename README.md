@@ -1,4 +1,4 @@
-## MecrispFORTH_LCD1602
+## MecrispForth_LCD1602
 
 # LCD1602_direct.fs
 Forth words for 4bit parallel connection to a LCD1602.
