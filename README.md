@@ -14,6 +14,9 @@ Forth words for 4bit parallel connection to a LCD1602.
     ;
 </pre>
 
+![breadboard](LCD1601_direct_MB103.png)
+(sorry no time for real schematic)
+
 # LCD1602_i2c.fs
 forth words for i2c connected LCD1602 (via PCF8574)
 
