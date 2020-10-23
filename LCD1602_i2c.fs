@@ -1,11 +1,11 @@
-( start LCD1602: ) here dup hex.
+( start LCD: ) here dup hex.
 
-\ driver for LCD1602 with PCF8574 i2c expander attached
+\ driver for LCD1602/LCD1604/LCD2004 with PCF8574 i2c expander attached
 \
 \ don't forget to start the systicks-hz, else it will hang 
 
 \ i2c address is configurable, standard at $27
-$27 constant LCD1602.addr
+$27 constant LCD.addr
 \ define bits on PCF8564
 $01 constant LCD_RS 
 $02 constant LCD_RW
@@ -46,9 +46,9 @@ decimal
 
 \ send only upper nibble
 : LCD_sendn ( byte - - )
-    LCD_EN or LCD_BLv c@ or dup LCD1602.addr i2c-addr >i2c 0 i2c-xfer drop
+    LCD_EN or LCD_BLv c@ or dup LCD.addr i2c-addr >i2c 0 i2c-xfer drop
     1 ms
-    LCD_EN bic LCD1602.addr i2c-addr >i2c 0 i2c-xfer drop    
+    LCD_EN bic LCD.addr i2c-addr >i2c 0 i2c-xfer drop    
 ;
 
 
@@ -82,7 +82,7 @@ decimal
 \ switches LCD on and BL on
 : LCD_on
     LCD_BL dup LCD_BLv c!
-    LCD1602.addr i2c-addr >i2c 0 i2c-xfer drop    
+    LCD.addr i2c-addr >i2c 0 i2c-xfer drop    
 ;
 
 \ reset curso pos and view
@@ -178,7 +178,7 @@ decimal
     \ comment out if you like, it is just here as demo
     \ if something is on stack don't do that and don't switch Backlight on!
     depth 0= if 
-	s" LCD1602 via HD44780 on i2c interface" LCD_write
+	s" LCD via HD44780 on i2c interface" LCD_write
 	0 1 LCD_pos
 	s" writen by SMb (c) 2020" LCD_write
 	
@@ -210,5 +210,5 @@ decimal
 
 
 
-( end LCD1602: ) here dup hex.
-( size LCD1602: ) swap - hex.
+( end LCD: ) here dup hex.
+( size LCD: ) swap - hex.
