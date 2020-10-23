@@ -5,7 +5,7 @@ Other single controler modules like LCD1604 will work too. LCD modules with two 
 
 Electrical connections and usage is the same for all modules, but display and memory organization is different. see below
 
-# LCD1602_direct.fs (name will change to LCD_direct)
+# LCD_direct.fs
 Forth words for 4bit parallel connection to a LCD.
 
 * simple Example
@@ -22,7 +22,7 @@ Forth words for 4bit parallel connection to a LCD.
 ![schematics](LCD1602_direct.png)
 (sorry no time for real schematic)
 
-# LCD1602_i2c.fs (name will change to LCD_i2c)
+# LCD_i2c.fs
 forth words for i2c connected LCD1602 (via PCF8574)
 
 * usage is same as above
@@ -48,7 +48,7 @@ I used Jean-Claude Wippler's flib to simplify the hardware access. https://git.j
 
 ## memory and display organization
 
-characters will be writen with LCD_send or LCD_write on display in order of memory cells. 
+characters will be writen with LCD_send or LCD_write on display continuously in order of memory cells. 
 
 LCD_pos takes care of real position.
 
