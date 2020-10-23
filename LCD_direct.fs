@@ -1,4 +1,4 @@
-( start LCD1602: ) here dup hex.
+( start LCD: ) here dup hex.
 
 \ don't forget to start the systicks-hz, else it will hang 
 
@@ -230,5 +230,5 @@ decimal
 \ ;
 
 
-( end LCD1602: ) here dup hex.
-( size LCD1602: ) swap - hex.
+( end LCD: ) here dup hex.
+( size LCD: ) swap - hex.
